@@ -95,7 +95,7 @@ Once you have all keys, your `.env.local` should look like:
 
 ```env
 # Supabase
-NEXT_PUBLIC_SUPABASE_URL=https://hvfvktcjpiirnrjhelln.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT_ID.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
