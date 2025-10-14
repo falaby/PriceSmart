@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #FFFBF5;
+  --color-cream-100: #FFF8ED;
+  --color-cream-200: #FFF0DB;
+  --color-cream-300: #FFE8C9;
+  --color-cream-400: #FFE0B7;
+  --color-cream-500: #FFD8A5;
+  --color-cream-600: #F5C98A;
+  --color-cream-700: #E6B870;
+  --color-cream-800: #D4A55F;
+  --color-cream-900: #C2924E;
+
+  --color-orange-50: #FFF4ED;
+  --color-orange-100: #FFE8D9;
+  --color-orange-200: #FFD1B3;
+  --color-orange-300: #FFB88C;
+  --color-orange-400: #FF9D66;
+  --color-orange-500: #FF8243;
+  --color-orange-600: #F56B1F;
+  --color-orange-700: #D95708;
+  --color-orange-800: #B34607;
+  --color-orange-900: #8C3606;
+
+  --color-accent-50: #FFF1E6;
+  --color-accent-100: #FFE3CC;
+  --color-accent-200: #FFC799;
+  --color-accent-300: #FFAB66;
+  --color-accent-400: #FF8F33;
+  --color-accent-500: #FF7300;
+  --color-accent-600: #CC5C00;
+  --color-accent-700: #994500;
+  --color-accent-800: #662E00;
+  --color-accent-900: #331700;
+}
+
+body {
+  background: linear-gradient(135deg, #FFF8ED 0%, #FFF4ED 100%);
+  min-height: 100vh;
+  color: #331700;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #FF8243, #FF7300);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: linear-gradient(to right, #FFE0B7, #FFD8A5);
+  color: #8C3606;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.card-elevated {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #FFD1B3;
+  transition: all 0.3s;
+}
+
+.card-elevated:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
