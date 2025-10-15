@@ -192,17 +192,39 @@ export default function PriceInputForm({ onSubmit, loading }: PriceInputFormProp
         </div>
       </div>
 
+      {/* Cost Summary */}
+      <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-4">
+        <div className="flex justify-between items-center">
+          <span className="text-orange-900 font-semibold">Total Product Cost:</span>
+          <span className="text-2xl font-bold text-orange-700">
+            ${(formData.unitCost + formData.variableCosts).toFixed(2)}
+          </span>
+        </div>
+      </div>
+
       {/* Submit Button */}
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-orange-600 hover:to-orange-700 transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg hover:shadow-xl"
       >
-        {loading ? 'Analyzing...' : 'Analyze Pricing'}
+        {loading ? (
+          <span className="flex items-center justify-center">
+            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Analyzing Your Pricing...
+          </span>
+        ) : (
+          <span className="flex items-center justify-center">
+            🚀 Analyze My Pricing Now
+          </span>
+        )}
       </button>
 
-      <p className="text-xs text-gray-500 text-center">
-        Total cost: ${(formData.unitCost + formData.variableCosts).toFixed(2)}
+      <p className="text-sm text-center text-gray-500">
+        Get AI-powered pricing recommendations based on real competitor data
       </p>
     </form>
   );

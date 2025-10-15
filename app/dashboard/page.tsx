@@ -185,13 +185,25 @@ export default function DashboardPage() {
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-5xl mx-auto">
           {/* Welcome Banner */}
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              Welcome back, {user?.email?.split('@')[0]}!
-            </h2>
-            <p className="text-gray-600">
-              Enter your product details below to get a data-driven pricing recommendation.
-            </p>
+          <div className="bg-gradient-to-r from-orange-50 to-cream-50 rounded-lg shadow-sm p-8 mb-8 border border-orange-200">
+            <div className="flex justify-between items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-orange-900 mb-2">
+                  Welcome back, {user?.email?.split('@')[0]}! 👋
+                </h2>
+                <p className="text-orange-700 text-lg">
+                  Ready to optimize your pricing? Enter your product details below.
+                </p>
+              </div>
+              {!analysis && !analyzing && (
+                <div className="hidden md:block">
+                  <div className="bg-white px-6 py-4 rounded-lg shadow-md border-2 border-orange-300">
+                    <div className="text-sm text-orange-600 font-semibold mb-1">ANALYSES LEFT</div>
+                    <div className="text-4xl font-bold text-orange-900">{analysesRemaining}</div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Error Message */}
@@ -215,9 +227,14 @@ export default function DashboardPage() {
           )}
 
           {/* Input Form */}
-          {!analysis && (
-            <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Product Information</h3>
+          {!analysis && !analyzing && (
+            <div className="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">📊 Product Information</h3>
+                <div className="text-sm text-gray-500">
+                  Step 1: Fill in your product details
+                </div>
+              </div>
               <PriceInputForm onSubmit={handleAnalysis} loading={analyzing} />
             </div>
           )}
